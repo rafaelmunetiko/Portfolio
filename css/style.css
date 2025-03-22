@@ -337,7 +337,7 @@ span {
     text-align: center;
     align-items: center;
     padding: 0 4rem;
-    transform: translateY(30rem);
+    transform: translateY(50rem);
     transition: 0.5s ease;
 }
 
@@ -374,7 +374,7 @@ footer {
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.rem;
+    padding: 0 1rem;
     background-color: var(--bg-color-01);
 }
 
@@ -455,3 +455,123 @@ footer .social-media a {
 }
 
 /*=====/menu hamburguer=====*/
+
+/*=====/media queries =====*/
+
+/* Extra Small (xs): Smartphone (portrait) */
+
+@media (min-width: 0px) {
+    .menu-hamburguer{
+        display: block;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav-responsive{
+        display: block;
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    section{
+        padding: 6rem 2.5rem;
+    }
+
+    .home, .about {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .home-img, .about-img{
+        width: 80%;
+        max-width: 80%;
+    }
+
+    .home-content, .about-content {
+        width: 100%;
+    }
+
+    .home-content div{
+        text-align: center;
+    }
+
+    .home-content h1, .about-content h1{
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .languages {
+        font-size: 0.5rem;
+        padding: 0.1rem;
+
+    }
+
+    .services-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-box{
+        width: 100%;
+    }
+
+    header {
+        background-color: var(--color-01);   /* TEST */
+    }
+    
+
+}
+
+/* Small (sm): Smartphone (landscape) */
+
+@media (min-width: 576px) {
+    
+    .home-img, .about-img{
+        width: 65%;
+        max-width: 65%;
+    }
+
+    .services-box{
+        width: 70%;
+    }
+    
+    header {
+        background-color: var(--color-02);   /* TEST */
+    }
+}
+
+/* Medium (md): Tablet */
+
+@media (min-width: 768px) {
+    
+
+    header {
+        background-color: var(--color-03);   /* TEST */
+    }
+}
+
+/* Large (lg): Notebook */
+
+@media (min-width: 992px) {
+    
+
+    header {
+        background-color: var(--color-04);   /* TEST */
+    }
+}
+
+/* Extra Large (lg): Desktop */
+
+@media (min-width: 992px) {
+    
+
+    header {
+        background-color: var(--color-05);   /* TEST */
+    }
+}
+
+
+/*=====/media queries =====*/
