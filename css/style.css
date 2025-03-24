@@ -97,8 +97,32 @@ span {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
 }
 
+.arrow {
+    font-size: 30px;
+    animation: bounce 1s infinite;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    bottom: 35px;
+    color: var(--main-color);
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
 .home-img img, .about-img img {
     width: 100%;
 }
