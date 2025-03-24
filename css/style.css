@@ -141,6 +141,7 @@ span {
     cursor: default;
     white-space: nowrap;
     transition: 0.3s ease;
+    width: fit-content
 }
 
 .html {
@@ -412,10 +413,6 @@ span {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 10px;
-}
-
-.certificate-list .certificate-link .javascript {
-    width: fit-content;
 }
 
 .certificate-list .certificate-link .certificate-title {
