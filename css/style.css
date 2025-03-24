@@ -106,113 +106,92 @@ span {
 .languages {
     padding: 0.2rem;
     font-size: 0.7rem;
-    border-radius: 10px;
+    border-radius: 50px;
     align-items: center;
     margin: 0.1rem;
     cursor: default;
     white-space: nowrap;
-
-    border: solid 1px var(--color-02); /* Test */
+    transition: 0.3s ease;
 }
 
 .html {
     background-color: #ec6231;
-    transition: 0.3s ease;
 }
 
 .html:hover {
     background-color: #c45228;
-    transition: 0.3s ease;
 }
 
 .css {
     background-color: #663399;
-    transition: 0.3s ease;
 }
 
 .css:hover {
     background-color: #48236d;
-    transition: 0.3s ease;
 }
 
 .javascript {
     background-color: #F0DB4F;
-    transition: 0.3s ease;
 }
 
 .javascript:hover {
     background-color: #ad9e3a;
-    transition: 0.3s ease;
 }
 
 .python {
     background-color: #4b8bbe;
-    transition: 0.3s ease;
 }
 
 .python:hover {
     background-color: #306998;
-    transition: 0.3s ease;
 }
 
 .java {
     background-color: #f89820;
-    transition: 0.3s ease;
 }
 
 .java:hover {
     background-color: #bb6f12;
-    transition: 0.3s ease;
 }
 
 .csharp {
     background-color: #9179E4;
-    transition: 0.3s ease;
 }
 
 .csharp:hover {
     background-color: #604ca8;
-    transition: 0.3s ease;
 }
 
 .sql {
     background-color: #00684A;
-    transition: 0.3s ease;
 }
 
 .sql:hover {
     background-color: #024230;
-    transition: 0.3s ease;
 }
 
 .tableau {
     background-color: #00467E;
-    transition: 0.3s ease;
 }
 
 .tableau:hover {
     background-color: #01294b;
-    transition: 0.3s ease;
 }
 
 .powerplatform {
     background-color: #67cd87;
-    transition: 0.3s ease;
 }
 
 .powerplatform:hover {
     background-color: #008683;
-    transition: 0.3s ease;
 }
 
 .sharepoint {
     background-color: #37C6D0;
-    transition: 0.3s ease;
 }
 
 .sharepoint:hover {
     background-color: #1A9BA1;
-    transition: 0.3s ease;
 }
 
 .about {
@@ -244,7 +223,8 @@ span {
 
 .services h2,
 .portfolio h2,
-.contact h2 {
+.contact h2,
+.certificate h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
     text-align:center;
@@ -366,6 +346,83 @@ span {
 .portfolio-layer a i{
     font-size: 1.2rem;
     color: var(--bg-color-02);
+}
+
+.certificate-box {
+    max-width: 1100px;
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.certificate-list .certificate-item {
+    list-style: none;
+}
+
+.certificate-list .certificate-item .certificate-link {
+    user-select: none;
+    display: block;
+    background: var(--bg-color-02);
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0.6rem var(--color-00);
+    transition: 0.3s ease;
+}
+
+.certificate-list .certificate-item .certificate-link:active {
+    cursor: grabbing;
+}
+
+.certificate-list .certificate-item .certificate-link:hover {
+    border-color: var(--main-color);
+}
+
+.certificate-list .certificate-link .certificate-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.certificate-list .certificate-link .javascript {
+    width: fit-content;
+}
+
+.certificate-list .certificate-link .certificate-title {
+    font-size: 1.19rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.certificate-list .certificate-link .certificate-button {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 10px 0 5px;
+    background: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.certificate-list .certificate-link:hover .certificate-button {
+    color: var(--main-color);
+}
+
+.certificate-box .swiper-pagination-bullet {
+    height: 9px;
+    width: 9px;
+    opacity: 0.5;
+    background: var(--main-color);
+}
+
+.certificate-box .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.certificate-box .swiper-slide-button {
+    color: var(--main-color);
+    margin-top: -35px;
 }
 
 
@@ -522,7 +579,13 @@ footer .social-media a {
         background-color: var(--color-01);   /* TEST */
     }
     
+    .certificate-box {
+        margin: 0 10px 25px;
+    }
 
+    .certificate-box .swiper-slide-button {
+        display: none;
+    }
 }
 
 /* Small (sm): Smartphone (landscape) */
@@ -547,9 +610,51 @@ footer .social-media a {
 
 @media (min-width: 768px) {
     
+    .menu-hamburguer {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .nav-responsive, .nav-responsive a{
+        display: none;
+    }
+
+    .home, .about {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .home-img, .about-img{
+        max-width: 35%;
+    }
+
+    .home-content, .about-content {
+        width: 50%;
+    }
 
     header {
         background-color: var(--color-03);   /* TEST */
+    }
+
+    .services-box{
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: auto auto;
+    }
+
+    .languages {
+        padding: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .certificate-box .swiper-slide-button {
+        display: block;
     }
 }
 
@@ -557,6 +662,10 @@ footer .social-media a {
 
 @media (min-width: 992px) {
     
+    .services-container {
+        flex-direction: row;
+        gap: 1.2rem;
+    }
 
     header {
         background-color: var(--color-04);   /* TEST */
@@ -567,6 +676,21 @@ footer .social-media a {
 
 @media (min-width: 992px) {
     
+    .home-img, .about-img{
+        max-width: 25%;
+    }
+
+    .home-content h1 {
+        font-size: 2.7rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: auto auto auto;
+    }
 
     header {
         background-color: var(--color-05);   /* TEST */
