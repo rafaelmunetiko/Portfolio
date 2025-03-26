@@ -46,3 +46,31 @@ function toggleMenu(){
         nav.style.display = 'none';
     }
 }
+
+/*=====expands the read more text =====*/
+
+document.querySelectorAll(".read-more-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        const paragraph = this.previousElementSibling;
+        
+        paragraph.classList.toggle("expanded");
+        
+        if (paragraph.classList.contains("expanded")) {
+            this.textContent = "Leia menos";
+        } else {
+            this.textContent = "Leia mais";
+        }
+    });
+});
+
+/*=====download cv =====*/
+
+function downloadPDF() {
+    
+    const pdfUrl = 'docs/curriculum.pdf'; 
+
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'curriculum.pdf'; 
+    link.click();
+  }

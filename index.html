@@ -58,18 +58,19 @@
                 <h4 class="languages css">CSS3</h4>
                 <h4 class="languages javascript">Javascript</h4>
                 <h4 class="languages python">Python</h4>
-                <h4 class="languages java">Java</h4>
-                <h4 class="languages csharp">C#</h4>
                 <h4 class="languages sql">SQL</h4>
+                <h4 class="languages csharp">C#</h4>
+                <h4 class="languages java">Java</h4>
                 <h4 class="languages tableau">Tableau</h4>
-                <h4 class="languages powerplatform">Power Platform</h4>
+                <h4 class="languages power-platform">Power Platform</h4>
                 <h4 class="languages sharepoint">Sharepoint</h4>
+                <h4 class="languages azure">Azure</h4>
             </div>
 
             <p>Meu objetivo é criar soluções rápidas e eficazes, sempre com foco em inovação e eficiência.</p>
 
             <div>
-                <a href="#" class="btn">Download CV</a>
+                <a href="#" class="btn" onclick="downloadPDF()">Download CV</a>
             </div>
 
             <i class='bx bx-chevrons-down arrow'></i>
@@ -92,7 +93,7 @@
 
                 <p>Desenvolvo interfaces web interativas e responsivas utilizando HTML, CSS e JavaScript. Meu foco é criar designs modernos e funcionais, garantindo uma experiência de usuário intuitiva e agradável, independentemente do dispositivo utilizado.</p>
 
-                <a href="#" class="btn">Leia Mais</a>
+                <a href="javascript:void(0);" class="btn read-more-btn">Leia Mais</a>
             </div>
 
             <div class="services-box">
@@ -101,7 +102,7 @@
     
                  <p>Tenho experiência no desenvolvimento de soluções back-end com Python, Java e C#. Trabalho na criação de APIs e integração de sistemas e bancos de dados (SQL e NoSQL), buscando sempre soluções eficientes, seguras e de fácil manutenção.</p>
     
-                 <a href="#" class="btn">Leia Mais</a>
+                 <a href="javascript:void(0);" class="btn read-more-btn">Leia Mais</a>
                 </div>
 
             <div class="services-box">
@@ -110,7 +111,7 @@
         
                 <p>Utilizo ferramentas como Power BI, Tableau, SQL e Excel para analisar dados e gerar insights que ajudam as empresas a tomar decisões estratégicas. Meu objetivo é transformar dados em informações claras e práticas, apoiando melhorias nos processos e resultados organizacionais.</p>
         
-                <a href="#" class="btn">Leia Mais</a>
+                <a href="javascript:void(0);" class="btn read-more-btn">Leia Mais</a>
                     </div>
 
         </div>
@@ -124,12 +125,12 @@
         <div class="portfolio-container">
 
             <div class="portfolio-box">
-                <img src="img/01.jpg" alt="Portfolio 1"> 
+                <img src="img/ProjetoPortfolio.jpg" alt="Portfolio 1"> 
 
                 <div class="portfolio-layer">
-                    <h4>Web Development</h4>
+                    <h4>Portfolio</h4>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam et dicta cumque cum suscipit. Blanditiis nesciunt explicabo a beatae magnam?
+                    <p>Projeto de um portfolio na web desenvolvido em hmtl, css e javascript
                     </p>
 
                     <a href="#"><i class='bx bx-link-external'></i></a>
@@ -219,13 +220,6 @@
             <div class="certificate-box">
                 <ul class="certificate-list swiper-wrapper">
                     <li class="certificate-item swiper-slide">
-                        <a href="#" class="certificate-link">
-                            <img src="img/01.jpg" alt="" class="certificate-img">
-                            <h4 class="languages javascript">Javascript</h4>
-                            <h2 class="certificate-title">Lorem ipsum dolor</h2>
-                            <button class='certificate-button bx bx-link-external'></button>
-                        </a>
-                    </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/degree/certificate/06c80863-e810-4be1-93bc-3051043b2ee0?lang=pt_BR" class="certificate-link">
                             <img src="img/Python POO.jpg" alt="PythonPOO" class="certificate-img">
                             <h4 class="languages python">Python</h4>
@@ -240,17 +234,38 @@
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
-                        <a href="#" class="certificate-link">
-                            <img src="img/04.jpg" alt="" class="certificate-img">
-                            <h4 class="languages javascript">Javascript</h4>
-                            <h2 class="certificate-title">Lorem ipsum dolor</h2>
+                        <a href="https://cursos.alura.com.br/degree/certificate/013ca3aa-d4c7-44e3-81e1-31fe7bf62f03?lang=pt_BR" class="certificate-link">
+                            <img src="img/Modelagem.jpg" alt="" class="certificate-img">
+                            <!-- <h4 class="languages javascript">Javascript</h4> -->
+                            <h2 class="certificate-title">Modelagem de dados</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
-                        <a href="#" class="certificate-link">
-                            <img src="img/05.jpg" alt="" class="certificate-img">
-                            <h4 class="languages javascript">Javascript</h4>
-                            <h2 class="certificate-title">Lorem ipsum dolor</h2>
+                        <a href="https://cursos.alura.com.br/certificate/a7a11f3a-ce52-47b2-83fd-9709a49b03cd?lang=pt_BR" class="certificate-link">
+                            <img src="img/PowerAutomate.jpg" alt="" class="certificate-img">
+                            <h4 class="languages power-platform">Power Platform</h4>
+                            <h2 class="certificate-title">Power Automate: criando fluxos de trabalho automatizados e otimizando rotinas</h2>
+                            <button class='certificate-button bx bx-link-external'></button>
+                        </a>
+                    </li><li class="certificate-item swiper-slide">
+                        <a href="https://cursos.alura.com.br/certificate/84b08825-519b-4144-9bd7-01fbbc26183a?lang=pt_BR" class="certificate-link">
+                            <img src="img/PowerApps.jpg" alt="" class="certificate-img">
+                            <h4 class="languages power-platform">Power Platform</h4>
+                            <h2 class="certificate-title">Power Apps: descobrindo o poder da automação LowCode</h2>
+                            <button class='certificate-button bx bx-link-external'></button>
+                        </a>
+                    </li><li class="certificate-item swiper-slide">
+                        <a href="https://www.udemy.com/certificate/UC-adfa6b9b-5fa4-42ed-813e-873b45c2d737/" class="certificate-link">
+                            <img src="img/PowerBI.jpg" alt="" class="certificate-img">
+                            <h4 class="languages power-platform">Power Platform</h4>
+                            <h2 class="certificate-title">Power BI Completo - Do Básico ao Avançado</h2>
+                            <button class='certificate-button bx bx-link-external'></button>
+                        </a>
+                    </li><li class="certificate-item swiper-slide">
+                        <a href="https://www.udemy.com/certificate/UC-563bae61-0364-4250-ab58-13acb1b8bb03/" class="certificate-link">
+                            <img src="img/SQL.jpg" alt="" class="certificate-img">
+                            <h4 class="languages sql">SQL</h4>
+                            <h2 class="certificate-title">O curso completo de Banco de Dados e SQL, sem mistérios!</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li>
@@ -285,9 +300,9 @@
     <footer class="contato" id="contato">
         <p>Desenvolvido por Rafael Munetiko</p>
         <div class="social-media">
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
-            <a href="#"><i class='bx bxl-github'></i></a>
-            <a href="#"><i class='bx bxl-whatsapp' ></i></a>
+            <a href="https://www.linkedin.com/in/rafaelmunetiko/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.github.com/rafaelmunetiko" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://wa.me/5511982325973" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
         </div>
     </footer>
 </body>

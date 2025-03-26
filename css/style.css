@@ -141,7 +141,8 @@ span {
     cursor: default;
     white-space: nowrap;
     transition: 0.3s ease;
-    width: fit-content
+    width: fit-content;
+    color: white;
 }
 
 .html {
@@ -161,7 +162,7 @@ span {
 }
 
 .javascript {
-    background-color: #F0DB4F;
+    background-color: #dac435;
 }
 
 .javascript:hover {
@@ -200,20 +201,28 @@ span {
     background-color: #024230;
 }
 
+.power-platform {
+    background-color: #0e9494;
+}
+
+.power-platform:hover {
+    background-color: #0c7a7a;
+}
+
+.azure {
+    background-color: #008ada;
+}
+
+.azure:hover {
+    background-color: #026aa7;
+}
+
 .tableau {
     background-color: #00467E;
 }
 
 .tableau:hover {
     background-color: #01294b;
-}
-
-.powerplatform {
-    background-color: #67cd87;
-}
-
-.powerplatform:hover {
-    background-color: #008683;
 }
 
 .sharepoint {
@@ -299,12 +308,19 @@ span {
 .services-box p {
     margin: 0.5rem;
     letter-spacing: 0.1rem;
-    /* n lines */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+
+.services-box p.expanded {
+    display: block; 
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    text-overflow: unset;
 }
 
 .portfolio {
