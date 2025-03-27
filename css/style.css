@@ -371,11 +371,12 @@ span {
 }
 
 .portfolio-layer h4 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .portfolio-layer p {
     margin: 0.2rem 0 0.5rem;
+    font-size: 1rem;
 }
 
 .portfolio-layer a {
