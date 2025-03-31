@@ -17,6 +17,15 @@
     --color-05: #232323;
 }
 
+body.dark-mode{   
+    --main-color: #9b37dd;
+    --text-color: #5a5244;
+    --bg-color-01: #ce9b3e;
+    --bg-color-02: #e6b874;
+    --color-00: #0000001a;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +34,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
+    transition: 0.5s;
 }
 
 html {
@@ -60,6 +70,90 @@ a:visited {
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    width: 60px;
+    height: 30px;
+    border-radius: 999px;
+    background: #f3f3f3;
+    box-shadow: 4px 4x 10px rgba(0, 0, 0, 0.05) inset;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 99px;
+    background: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05),
+    -4px -4px 15px rgba(0, 0, 0, 0.05) inset;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(10%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+input{
+    display: none;
+}
+
+.circle i {
+    font-size: 18px;
+    position: absolute;
+}
+
+.sun {
+    color: #ffd600;
+    margin-top: 0%;
+    opacity: 1;
+}
+
+.moon {
+    margin-top: -150%;
+    color: white;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked +.display {
+    background: transparent;
+}
+
+input[type=checkbox]:checked +.display label {
+    background: #1f1f21;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
+    border: none;
+}
+
+input[type=checkbox]:checked +.display label .circle {
+    left: 100%;
+    transform: translate(-110%, -50%);
+    background: #2c2c2f;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5),
+    -4px -4px 15px rgba(0, 0, 0, 0.5) inset;
+}
+
+input[type=checkbox]:checked +.display label .circle .sun {
+    margin-top: 150%;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked +.display label .circle .moon {
+    margin-top: 0%;
+    opacity: 1;
 }
 
 .nav-responsive {
