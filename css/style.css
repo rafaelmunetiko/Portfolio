@@ -18,10 +18,10 @@
 }
 
 body.dark-mode{   
-    --main-color: #9b37dd;
-    --text-color: #5a5244;
-    --bg-color-01: #ce9b3e;
-    --bg-color-02: #e6b874;
+    --main-color: #bd66f7;
+    --text-color: #6d532b;
+    --bg-color-01: #FFFDD0;
+    --bg-color-02: #f1eeab;
     --color-00: #0000001a;
 
 }
@@ -465,14 +465,42 @@ span {
 }
 
 .portfolio-layer h4 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    text-shadow: 
+        -0.5px -0.5px 0 black,  
+        0.5px -0.5px 0 black,  
+        -0.5px 0.5px 0 black,  
+        0.5px 0.5px 0 black; 
 }
 
 .portfolio-layer p {
     margin: 0.2rem 0 0.5rem;
-    font-size: 1rem;
+    font-size: 0.7rem;
+    text-shadow: 
+        -0.5px -0.5px 0 black,  
+        0.5px -0.5px 0 black,  
+        -0.5px 0.5px 0 black,  
+        0.5px 0.5px 0 black; 
 }
 
+body.dark-mode .portfolio-layer h4 {
+    font-size: 1.1rem;
+    text-shadow: 
+        -0.6px -0.6px 0 white,  
+        0.6px -0.6px 0 white,  
+        -0.6px 0.6px 0 white,  
+        0.6px 0.6px 0 white; 
+}
+
+body.dark-mode .portfolio-layer p {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 0.7rem;
+    text-shadow: 
+        -0.6px -0.6px 0 white,  
+        0.6px -0.6px 0 white,  
+        -0.6px 0.6px 0 white,  
+        0.6px 0.6px 0 white; 
+}
 .portfolio-layer a {
     display: inline-flex;
     justify-content: center;
@@ -481,6 +509,11 @@ span {
     height: 3rem;
     background: var(--text-color);
     border-radius: 50%;
+}
+
+.portfolio-languages {
+    display: flex;
+    gap: 0.1rem;
 }
 
 .portfolio-layer a i{
