@@ -664,6 +664,17 @@ body.dark-mode .portfolio-layer p {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+.card-front {
+    background-image: url('img/jogo.webp'); /* Imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir o card */
+    background-position: center; /* Centraliza a imagem */
+    height: 100%;
+    display: flex;
+    align-items: flex-end; /* Alinha o título na parte inferior */
+    justify-content: center;
+    padding: 20px;
+}
+
 .card-back p {
     font-size: 0.6rem; 
     color: var(--text-color); 
@@ -672,6 +683,9 @@ body.dark-mode .portfolio-layer p {
 .card-front h2 {
     font-size: 1rem; 
     color: var(--text-color); 
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
