@@ -1,102 +1,148 @@
-new Swiper('.certificate-box', {
-    loop: true,
-    spaceBetween: 20,
-  
-    // Pagination bullets
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // Responsive breakpoints
-    breakpoints: {
-        0: {
-            slidesPerView: 1
+// Verifica se a classe 'certificate-box' existe antes de iniciar o Swiper
+const swiperContainer = document.querySelector('.certificate-box');
+if (swiperContainer) {
+    new Swiper('.certificate-box', {
+        loop: true,
+        spaceBetween: 20,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
         },
-        768: {
-            slidesPerView: 2
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
-        1024: {
-            slidesPerView: 3
-        }
-    }
-  });
-
-/*=====turns the menu hamburuer into a X =====*/
-
-const menuHamburguer = document.querySelector('.menu-hamburguer')
-menuHamburguer.addEventListener('click', () => {
-    toggleMenu();
-});
-
-function toggleMenu(){
-    const nav = document.querySelector('.nav-responsive');  
-    menuHamburguer.classList.toggle('change');
-
-    if (menuHamburguer.classList.contains('change')) {
-        nav.style.display = 'block';
-    } else {
-        nav.style.display = 'none';
-    }
-}
-
-/*=====expands the read more text =====*/
-
-document.querySelectorAll(".read-more-btn").forEach(button => {
-    button.addEventListener("click", function () {
-        const paragraph = this.previousElementSibling;
-        
-        paragraph.classList.toggle("expanded");
-        
-        if (paragraph.classList.contains("expanded")) {
-            this.textContent = "Leia menos";
-        } else {
-            this.textContent = "Leia mais";
+        breakpoints: {
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
         }
     });
+}
+
+/*===== Menu Hamburguer =====*/
+const menuHamburguer = document.querySelector('.menu-hamburguer');
+const nav = document.querySelector('.nav-responsive');
+
+menuHamburguer.addEventListener('click', () => {
+    menuHamburguer.classList.toggle('change');
+    nav.classList.toggle('open'); 
 });
 
-/*=====download cv =====*/
+/*===== Expande o texto "Leia mais" =====*/
+document.addEventListener("click", function (event) {
+    const allParagraphs = document.querySelectorAll(".services-box p");
 
+    if (event.target.classList.contains("read-more-btn")) {
+        const paragraph = event.target.previousElementSibling;
+
+        allParagraphs.forEach(p => {
+            if (p !== paragraph) {
+                p.classList.remove("expanded");
+                p.nextElementSibling.textContent = "Leia mais";
+            }
+        });
+
+        paragraph.classList.toggle("expanded");
+        event.target.textContent = paragraph.classList.contains("expanded") ? "Leia menos" : "Leia mais";
+    } else {
+            allParagraphs.forEach(p => {
+            p.classList.remove("expanded");
+            p.nextElementSibling.textContent = "Leia mais";
+        });
+    }
+});
+
+
+/*===== Download do CV =====*/
 function downloadPDF() {
-    
-    const pdfUrl = 'docs/curriculum.pdf'; 
+    window.open('docs/curriculum.pdf', '_blank');
+}
 
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'curriculum.pdf'; 
-    link.click();
-  }
-
-  /*=====dark mode =====*/
-
+/*===== Dark Mode =====*/
 const toggle = document.getElementById('toggle');
 
-const savedTheme = localStorage.getItem('theme');
-
-if (savedTheme === 'dark') {
+if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
-    toggle.checked = true; 
-} else {
-    document.body.classList.remove('dark-mode');
-    toggle.checked = false; 
+    toggle.checked = true;
 }
 
 toggle.addEventListener('change', function() {
-    if (this.checked) {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+
+/*===== Flip Cards =====*/
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('flipped');
+    });
+});
+
+
+/*===== Typing Effect =====*/
+const texts = ["Desenvolvedor Fullstack", "Analista de Dados"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let speed = 100; 
+
+        function typeEffect() {
+            const typingElement = document.getElementById("typing");
+            const currentText = texts[textIndex];
+
+            if (isDeleting) {
+                charIndex--;
+                speed = 50; 
+            } else {
+                charIndex++;
+                speed = 100; 
+            }
+
+            typingElement.textContent = currentText.substring(0, charIndex);
+
+            if (!isDeleting && charIndex === currentText.length) {
+                speed = 1000; 
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        typeEffect();
+
+        const socialMediaLinks = document.querySelectorAll('.social-media a');
+const navLinks = document.querySelectorAll('.nav a');
+
+/*===== Pulsing Effect =====*/
+
+function removePulseEffect() {
+    socialMediaLinks.forEach(link => {
+        link.style.animation = 'none';
+    });
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        socialMediaLinks.forEach(link => {
+            link.style.animation = 'pulse 1.5s infinite'; 
+        });
+
         
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark'); 
-    } else {
-        
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
+        setTimeout(removePulseEffect, 1500); 
+    });
+});
+
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.nav')) { 
+        removePulseEffect(); 
     }
 });
