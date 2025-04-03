@@ -87,7 +87,7 @@ document.querySelectorAll('.card').forEach(card => {
 
 
 /*===== Typing Effect =====*/
-const texts = ["Desenvolvedor Fullstack", "Analista de Dados"];
+const texts = ["Desenvolvedor Front-end", "Desenvolvedor Back-end", "Analista de Dados"];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
