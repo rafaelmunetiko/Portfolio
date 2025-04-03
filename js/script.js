@@ -1,8 +1,8 @@
-// Verifica se a classe 'certificate-box' existe antes de iniciar o Swiper
 const swiperContainer = document.querySelector('.certificate-box');
 if (swiperContainer) {
     new Swiper('.certificate-box', {
         loop: true,
+        centeredSlides: true, // Centraliza os slides
         spaceBetween: 20,
         pagination: {
             el: '.swiper-pagination',
@@ -20,6 +20,7 @@ if (swiperContainer) {
         }
     });
 }
+
 
 /*===== Menu Hamburguer =====*/
 const menuHamburguer = document.querySelector('.menu-hamburguer');
