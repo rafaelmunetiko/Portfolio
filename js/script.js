@@ -87,11 +87,14 @@ document.querySelectorAll('.card').forEach(card => {
 
 
 /*===== Typing Effect =====*/
-const texts = ["Desenvolvedor Front-end", "Desenvolvedor Back-end", "Analista de Dados"];
+
+const texts = ["Desenvolvedor Front-End", "Desenvolvedor Back-End", "Analista de Dados"];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let speed = 100; 
+        let speed = 100;
+        let deletingFrontEnd = false;
+        let deletingAnalista = false;
 
         function typeEffect() {
             const typingElement = document.getElementById("typing");
@@ -99,17 +102,38 @@ const texts = ["Desenvolvedor Front-end", "Desenvolvedor Back-end", "Analista de
 
             if (isDeleting) {
                 charIndex--;
-                speed = 50; 
+                speed = 50;
+
+                if (deletingFrontEnd && charIndex === "Desenvolvedor ".length) {
+                    isDeleting = false;
+                    deletingFrontEnd = false;
+                    textIndex = 1; 
+                }
+               
+                if (deletingAnalista && charIndex === 0) {
+                    isDeleting = false;
+                    deletingAnalista = false;
+                    textIndex = 0; 
+                }
             } else {
                 charIndex++;
-                speed = 100; 
+                speed = 100;
             }
 
             typingElement.textContent = currentText.substring(0, charIndex);
 
             if (!isDeleting && charIndex === currentText.length) {
-                speed = 1000; 
-                isDeleting = true;
+                speed = 1000;
+
+                if (textIndex === 0) {
+                    deletingFrontEnd = true; 
+                    isDeleting = true;
+                } else if (textIndex === 1) {
+                    isDeleting = true; 
+                } else if (textIndex === 2) {
+                    deletingAnalista = true; 
+                    isDeleting = true;
+                }
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 textIndex = (textIndex + 1) % texts.length;
@@ -120,10 +144,10 @@ const texts = ["Desenvolvedor Front-end", "Desenvolvedor Back-end", "Analista de
 
         typeEffect();
 
-        const socialMediaLinks = document.querySelectorAll('.social-media a');
+/*===== Pulsing Effect =====*/
+const socialMediaLinks = document.querySelectorAll('.social-media a');
 const navLinks = document.querySelectorAll('.nav a');
 
-/*===== Pulsing Effect =====*/
 
 function removePulseEffect() {
     socialMediaLinks.forEach(link => {
