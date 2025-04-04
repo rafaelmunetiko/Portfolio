@@ -624,10 +624,11 @@ body.dark-mode .portfolio-layer p {
     max-width: 300px; 
     min-width: 200px;
     height: 400px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    background: linear-gradient(135deg, var(--bg-color-01), var(--bg-color-02));
+    border-radius: 15px; 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 
