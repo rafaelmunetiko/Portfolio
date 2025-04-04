@@ -541,6 +541,8 @@ body.dark-mode .portfolio-layer p {
 
 
 .swiper-slide {
+    width: 300px; 
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
 }

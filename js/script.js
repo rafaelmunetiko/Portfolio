@@ -1,8 +1,14 @@
+/*===== Swiper =====*/
+
+
 const swiperContainer = document.querySelector('.certificate-box');
 if (swiperContainer) {
     new Swiper('.certificate-box', {
         loop: true,
-        centeredSlides: true, // Centraliza os slides
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        watchSlidesProgress: true,
+        loopAdditionalSlides: 3,
         spaceBetween: 20,
         pagination: {
             el: '.swiper-pagination',
@@ -21,6 +27,7 @@ if (swiperContainer) {
     });
 }
 
+/*===== /Swiper =====*/
 
 /*===== Menu Hamburguer =====*/
 const menuHamburguer = document.querySelector('.menu-hamburguer');
