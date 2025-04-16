@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete Portfolio Website</title>
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <!-- swiperjs css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- custom css -->
-     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Portfólio</a>
+        <a href="#" class="logo" data-i18n="logo">Portfólio</a>
 
         <input type="checkbox" id="toggle" class="toggle">
         <div class="display">
@@ -26,22 +23,31 @@
             </label>
         </div>
 
+        <div class="language-switcher">
+            <button id="pt-br" class="lang-btn active-lang">
+                <img src="img/brazil.webp" alt="Português" class="flag-icon"> PT
+            </button>
+            <button id="en" class="lang-btn">
+                <img src="img/united-states.webp" alt="English" class="flag-icon"> EN
+            </button>
+        </div>
+
         <div class="nav">
-            <a href="#home">Home</a>
-            <a href="#services">Serviços</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#certificate">Certificados</a>
-            <a href="#hobbies">Meus Hobbies</a>
-            <a href="#contato">Contato</a>
+            <a href="#home" data-i18n="nav_home">Home</a>
+            <a href="#services" data-i18n="nav_services">Serviços</a>
+            <a href="#portfolio" data-i18n="nav_portfolio">Portfólio</a>
+            <a href="#certificate" data-i18n="nav_certificate">Certificados</a>
+            <a href="#hobbies" data-i18n="nav_hobbies">Meus Hobbies</a>
+            <a href="#contato" data-i18n="nav_contato">Contato</a>
         </div>
 
         <div class="nav-responsive">
-            <a href="#home">Home</a>
-            <a href="#services">Serviços</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#certificate">Certificados</a>
-            <a href="#hobbies">Meus Hobbies</a>
-            <a href="#contato">Contato</a>
+            <a href="#home" data-i18n="nav_home">Home</a>
+            <a href="#services" data-i18n="nav_services">Serviços</a>
+            <a href="#portfolio" data-i18n="nav_portfolio">Portfólio</a>
+            <a href="#certificate" data-i18n="nav_certificate">Certificados</a>
+            <a href="#hobbies" data-i18n="nav_hobbies">Meus Hobbies</a>
+            <a href="#contato" data-i18n="nav_contato">Contato</a>
         </div>
 
         <div class="menu-hamburguer">
@@ -52,16 +58,15 @@
 
     </header>
 
-    <!-- home -->
-     <section class="home" id="home">
+    <section class="home" id="home">
         <div class="home-content">
-            <h3>Olá, eu sou</h3>
+            <h3 data-i18n="home_hello">Olá, eu sou</h3>
             <h1>Rafael Munetiko</h1>
-            <h3><span id="typing" class="typing"></span></h3>
+            <h3 data-i18n="typing_professions"><span id="typing" class="typing"></span></h3>
 
-            <p>Com 9 anos de experiência em RH, estou fazendo a transição para a área de Análise de Dados e Desenvolvimento Front-End e Back-End. Sou movido pelo desafio de construir soluções que conectam dados e código, criando experiências digitais que não só funcionam, mas encantam.</p>
+            <p data-i18n="home_intro">Com 9 anos de experiência em RH, estou fazendo a transição para a área de Análise de Dados e Desenvolvimento Front-End e Back-End. Sou movido pelo desafio de construir soluções que conectam dados e código, criando experiências digitais que não só funcionam, mas encantam.</p>
 
-            <p>Conhecimentos em ferramentas como:</p>
+            <p data-i18n="home_skills_intro">Conhecimentos em ferramentas como:</p>
 
             <div class="languages-bar">
                 <h4 class="languages html">HTML5</h4>
@@ -77,10 +82,10 @@
                 <h4 class="languages azure">Azure</h4>
             </div>
 
-            <p>Meu objetivo é criar soluções rápidas e eficazes, sempre com foco em inovação e eficiência.</p>
+            <p data-i18n="home_objective">Meu objetivo é criar soluções rápidas e eficazes, sempre com foco em inovação e eficiência.</p>
 
             <div>
-                <a href="#" class="btn" onclick="downloadPDF()">Download CV</a>
+                <a href="#" class="btn" data-i18n="home_download_cv">Download CV</a>
             </div>
 
             <i class='bx bx-chevrons-down arrow'></i>
@@ -90,56 +95,50 @@
             <img src="img/foto.webp" alt="foto de perfil" srcset="">
         </div>
     </section>
-    <!-- /home -->
-
-    <!-- service section -->
-     <section class="services" id="services">
-        <h2>Meus <span>Serviços</span></h2>
+    <section class="services" id="services">
+        <h2 data-i18n="services_title">Meus <span>Serviços</span></h2>
 
         <div class="services-container">
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
-                <h3>Front-End</h3>
+                <h3 data-i18n="services_frontend_title">Front-End</h3>
 
-                <p>Desenvolvo interfaces web interativas e responsivas utilizando HTML, CSS e JavaScript. Meu foco é criar designs modernos e funcionais, garantindo uma experiência de usuário intuitiva e agradável, independentemente do dispositivo utilizado.</p>
+                <p data-i18n="services_frontend_desc">Desenvolvo interfaces web interativas e responsivas utilizando HTML, CSS e JavaScript. Meu foco é criar designs modernos e funcionais, garantindo uma experiência de usuário intuitiva e agradável, independentemente do dispositivo utilizado.</p>
 
-                <a href="javascript:void(0);" class="btn read-more-btn">Leia Mais</a>
+                <a href="javascript:void(0);" class="btn read-more-btn" data-i18n="read_more">Leia Mais</a>
             </div>
 
             <div class="services-box">
                 <i class='bx bx-code-curly' ></i>
-                <h3>Back-End</h3>
-    
-                 <p>Tenho experiência no desenvolvimento de soluções back-end com Python, Java e C#. Trabalho na criação de APIs e integração de sistemas e bancos de dados (SQL e NoSQL), buscando sempre soluções eficientes, seguras e de fácil manutenção.</p>
-    
-                 <a href="javascript:void(0);" class="btn read-more-btn">Leia Mais</a>
+                <h3 data-i18n="services_backend_title">Back-End</h3>
+
+                 <p data-i18n="services_backend_desc">Tenho experiência no desenvolvimento de soluções back-end com Python, Java e C#. Trabalho na criação de APIs e integração de sistemas e bancos de dados (SQL e NoSQL), buscando sempre soluções eficientes, seguras e de fácil manutenção.</p>
+
+                 <a href="javascript:void(0);" class="btn read-more-btn" data-i18n="read_more">Leia Mais</a>
                 </div>
 
             <div class="services-box">
                 <i class='bx bx-data'></i>
-                <h3>Análise de Dados</h3>
-        
-                <p>Utilizo ferramentas como Power BI, Tableau, SQL e Excel para analisar dados e gerar insights que ajudam as empresas a tomar decisões estratégicas. Meu objetivo é transformar dados em informações claras e práticas, apoiando melhorias nos processos e resultados organizacionais.</p>
-        
-                <a href="javascript:void(0);" class="btn read-more-btn">Leia Mais</a>
+                <h3 data-i18n="services_data_title">Análise de Dados</h3>
+
+                <p data-i18n="services_data_desc">Utilizo ferramentas como Power BI, Tableau, SQL e Excel para analisar dados e gerar insights que ajudam as empresas a tomar decisões estratégicas. Meu objetivo é transformar dados em informações claras e práticas, apoiando melhorias nos processos e resultados organizacionais.</p>
+
+                <a href="javascript:void(0);" class="btn read-more-btn" data-i18n="read_more">Leia Mais</a>
                     </div>
 
         </div>
      </section>
-    <!-- service section -->
-
-    <!-- portfolio section -->
-     <section class="portfolio" id="portfolio">
-        <h2>Últimos <span>Projetos</span></h2>
+    <section class="portfolio" id="portfolio">
+        <h2 data-i18n="portfolio_title">Últimos <span>Projetos</span></h2>
 
         <div class="portfolio-container">
 
             <div class="portfolio-box">
-                <img src="img/ProjetoPortfolio.webp" alt="Portfolio 1"> 
+                <img src="img/ProjetoPortfolio.webp" alt="Portfolio 1">
 
                 <div class="portfolio-layer">
-                    <h4>Portfolio</h4>
-                    <p>Projeto de um portfólio na web desenvolvido em html, css e javascript
+                    <h4 data-i18n="portfolio_project1_title">Portfolio</h4>
+                    <p data-i18n="portfolio_project1_desc">Projeto de um portfólio na web desenvolvido em html, css e javascript
                     </p>
                     <div class="portfolio-languages">
                         <h6 class="languages html">HTML</h6>
@@ -153,12 +152,12 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="img/RestaurantesAPI.webp" alt="Portfolio 5">  
+                <img src="img/RestaurantesAPI.webp" alt="Portfolio 5">
 
                 <div class="portfolio-layer">
-                    <h4>API de Restaurantes com FastAPI</h4>
+                    <h4 data-i18n="portfolio_project2_title">API de Restaurantes com FastAPI</h4>
 
-                    <p>Busca e organiza cardápios de restaurantes externos em endpoints próprios, com consultas rápidas via Swagger UI.
+                    <p data-i18n="portfolio_project2_desc">Busca e organiza cardápios de restaurantes externos em endpoints próprios, com consultas rápidas via Swagger UI.
                     </p>
                     <div class="portfolio-languages">
                         <h6 class="languages python">Python</h6>
@@ -170,12 +169,12 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="img/Automacao.webp" alt="Portfolio 3"> 
+                <img src="img/Automacao.webp" alt="Portfolio 3">
 
                 <div class="portfolio-layer">
-                    <h4>Gestão de Presença Escolar</h4>
+                    <h4 data-i18n="portfolio_project3_title">Gestão de Presença Escolar</h4>
 
-                    <p>Aplicativo que integra uma API ao Microsoft 365, registrando presença e automatizando processos com Power Platform.
+                    <p data-i18n="portfolio_project3_desc">Aplicativo que integra uma API ao Microsoft 365, registrando presença e automatizando processos com Power Platform.
                     </p>
                     <div class="portfolio-languages">
                         <h6 class="languages sharepoint">Sharepoint</h6>
@@ -188,14 +187,14 @@
             </div>
 
 
-            
+
             <div class="portfolio-box">
-                <img src="img/AluraBooks.webp" alt="Portfolio 4">  
+                <img src="img/AluraBooks.webp" alt="Portfolio 4">
 
                 <div class="portfolio-layer">
-                    <h4>Alura Books</h4>
+                    <h4 data-i18n="portfolio_project4_title">Alura Books</h4>
 
-                    <p>Landing page responsiva para o Alura Books, focada na venda de livros de programação e otimizada para diferentes dispositivos.
+                    <p data-i18n="portfolio_project4_desc">Landing page responsiva para o Alura Books, focada na venda de livros de programação e otimizada para diferentes dispositivos.
                     </p>
                     <div class="portfolio-languages">
                         <h6 class="languages html">HTML</h6>
@@ -209,12 +208,12 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="img/ProjetoTeclado.webp" alt="Portfolio 2">  
+                <img src="img/ProjetoTeclado.webp" alt="Portfolio 2">
 
                 <div class="portfolio-layer">
-                    <h4>Teclado Sonoro</h4>
+                    <h4 data-i18n="portfolio_project5_title">Teclado Sonoro</h4>
 
-                    <p>Teclado sonoro interativo desenvolvido com HTML, CSS e JavaScript para aprendizado prático.
+                    <p data-i18n="portfolio_project5_desc">Teclado sonoro interativo desenvolvido com HTML, CSS e JavaScript para aprendizado prático.
                     </p>
                     <div class="portfolio-languages">
                         <h6 class="languages html">HTML</h6>
@@ -228,12 +227,12 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="img/Dashboard.webp" alt="Portfolio 6">  
+                <img src="img/Dashboard.webp" alt="Portfolio 6">
 
                 <div class="portfolio-layer">
-                    <h4>Dashboard Gatito</h4>
+                    <h4 data-i18n="portfolio_project6_title">Dashboard Gatito</h4>
 
-                    <p>Dashboard interativo para análise de vendas e faturamento do Gatito Petshop, com insights sobre clientes, produtos e expansão.
+                    <p data-i18n="portfolio_project6_desc">Dashboard interativo para análise de vendas e faturamento do Gatito Petshop, com insights sobre clientes, produtos e expansão.
                     </p>
                     <div class="portfolio-languages">
                         <h6 class="languages power-platform">Power Platform</h6>
@@ -246,11 +245,8 @@
 
         </div>
      </section>
-    <!-- /portfolio section -->
-
-    <!-- certificate section -->
-     <section class="certificate" id="certificate">
-        <h2>Certificados</h2>
+    <section class="certificate" id="certificate">
+        <h2 data-i18n="certificates_title">Certificados</h2>
 
         <div class="certificate-container swiper">
             <div class="certificate-box">
@@ -259,63 +255,62 @@
                         <a href="https://cursos.alura.com.br/degree/certificate/06c80863-e810-4be1-93bc-3051043b2ee0?lang=pt_BR" class="certificate-link">
                             <img src="img/Python POO.webp" alt="PythonPOO" class="certificate-img">
                             <h4 class="languages python">Python</h4>
-                            <h2 class="certificate-title">Aprenda a programar em Python com Orientação a Objetos</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_python_poo">Aprenda a programar em Python com Orientação a Objetos</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/degree/certificate/db3ef379-d277-4e89-be9a-5abc670f7b42?lang=pt_BR" class="certificate-link">
                             <img src="imG/HTML.webp" alt="HTML" class="certificate-img">
                             <h4 class="languages html">HTML</h4>
-                            <h2 class="certificate-title">A partir do zero: HTML e CSS para projetos web</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_html_css">A partir do zero: HTML e CSS para projetos web</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/degree/certificate/013ca3aa-d4c7-44e3-81e1-31fe7bf62f03?lang=pt_BR" class="certificate-link">
                             <img src="img/Modelagem.webp" alt="" class="certificate-img">
-                            <!-- <h4 class="languages javascript">Javascript</h4> -->
-                            <h2 class="certificate-title">Modelagem de dados</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_data_modeling">Modelagem de dados</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/certificate/a7a11f3a-ce52-47b2-83fd-9709a49b03cd?lang=pt_BR" class="certificate-link">
                             <img src="img/PowerAutomate.webp" alt="" class="certificate-img">
                             <h4 class="languages power-platform">Power Platform</h4>
-                            <h2 class="certificate-title">Power Automate: criando fluxos de trabalho automatizados e otimizando rotinas</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_power_automate">Power Automate: criando fluxos de trabalho automatizados e otimizando rotinas</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/certificate/84b08825-519b-4144-9bd7-01fbbc26183a?lang=pt_BR" class="certificate-link">
                             <img src="img/PowerApps.webp" alt="" class="certificate-img">
                             <h4 class="languages power-platform">Power Platform</h4>
-                            <h2 class="certificate-title">Power Apps: descobrindo o poder da automação LowCode</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_power_apps">Power Apps: descobrindo o poder da automação LowCode</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://www.udemy.com/certificate/UC-adfa6b9b-5fa4-42ed-813e-873b45c2d737/" class="certificate-link">
                             <img src="img/PowerBI.webp" alt="" class="certificate-img">
                             <h4 class="languages power-platform">Power Platform</h4>
-                            <h2 class="certificate-title">Power BI Completo - Do Básico ao Avançado</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_power_bi">Power BI Completo - Do Básico ao Avançado</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://www.udemy.com/certificate/UC-563bae61-0364-4250-ab58-13acb1b8bb03/" class="certificate-link">
                             <img src="img/SQL.webp" alt="" class="certificate-img">
                             <h4 class="languages sql">SQL</h4>
-                            <h2 class="certificate-title">O curso completo de Banco de Dados e SQL, sem mistérios!</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_sql">O curso completo de Banco de Dados e SQL, sem mistérios!</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/certificate/d687512c-c2c4-4150-acc0-9c425e341943?lang=pt_BR" class="certificate-link">
                             <img src="img/SHAREPOINT.webp" alt="" class="certificate-img">
                             <h4 class="languages sharepoint">Sharepoint</h4>
-                            <h2 class="certificate-title">SharePoint 1: criando um site de colaboração para a equipe</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_sharepoint">SharePoint 1: criando um site de colaboração para a equipe</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li><li class="certificate-item swiper-slide">
                         <a href="https://cursos.alura.com.br/certificate/06621a64-c7a6-412e-a502-549a214f1de8?lang=pt_BR" class="certificate-link">
                             <img src="img/AZURE.webp" alt="" class="certificate-img">
                             <h4 class="languages azure">Azure</h4>
-                            <h2 class="certificate-title">Azure Cloud: criando um servidor com banco de dados para receber uma aplicação</h2>
+                            <h2 class="certificate-title" data-i18n="certificate_azure">Azure Cloud: criando um servidor com banco de dados para receber uma aplicação</h2>
                             <button class='certificate-button bx bx-link-external'></button>
                         </a>
                     </li>
@@ -327,90 +322,83 @@
             </div>
         </div>
      </section>
-    <!-- certificate section -->
-
-
-    <!-- hobbies section -->
-     <section class="hobbies" id="hobbies">
-        <h2>Meus <span>Hobbies</span></h2>
+    <section class="hobbies" id="hobbies">
+        <h2 data-i18n="hobbies_title">Meus <span>Hobbies</span></h2>
 
         <div class="cards-container">
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front card-jogo">
-                        <h3>Jogos & Estratégia</h3>
+                        <h3 data-i18n="hobbies_games_front">Jogos & Estratégia</h3>
                     </div>
                     <div class="card-back">
-                        <p>Não é só diversão, é treino para raciocínio rápido, solução de problemas e trabalho em equipe. Aprender a perder (e ganhar) também faz parte.</p>
-                        <p><strong>Soft skills desenvolvidas: Raciocínio Lógico, Colaboração, Resiliência</p></strong></p>
+                        <p data-i18n="hobbies_games_back_p1">Não é só diversão, é treino para raciocínio rápido, solução de problemas e trabalho em equipe. Aprender a perder (e ganhar) também faz parte.</p>
+                        <p><strong data-i18n="hobbies_games_back_p2">Soft skills desenvolvidas: Raciocínio Lógico, Colaboração, Resiliência</strong></p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front card-literatura">
-                        <h3>Literatura & Storytelling</h3>
+                        <h3 data-i18n="hobbies_literature_front">Literatura & Storytelling</h3>
                     </div>
                     <div class="card-back">
-                        <p>Ler ensina a interpretar melhor o mundo, contar boas histórias e até se comunicar de forma mais clara. Quem escreve bem, se expressa melhor em qualquer área.</p>
-                            <p><strong>Soft skills desenvolvidas: Comunicação, Criatividade, Pensamento Crítico</strong></p>
+                        <p data-i18n="hobbies_literature_back_p1">Ler ensina a interpretar melhor o mundo, contar boas histórias e até se comunicar de forma mais clara. Quem escreve bem, se expressa melhor em qualquer área.</p>
+                            <p><strong data-i18n="hobbies_literature_back_p2">Soft skills desenvolvidas: Comunicação, Criatividade, Pensamento Crítico</strong></p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front card-escotismo">
-                        <h3>Trabalho Voluntário & Escotismo</h3>
+                        <h3 data-i18n="hobbies_scouting_front">Trabalho Voluntário & Escotismo</h3>
                     </div>
                     <div class="card-back">
-                        <p>Organizar projetos voluntários e viver o escotismo me ensinou na prática sobre liderança, resiliência e como resolver problemas com poucos recursos.</p>
-                        <p><strong>Soft skills desenvolvidas: Liderança, Adaptabilidade, Trabalho em Equipe</strong></p>
+                        <p data-i18n="hobbies_scouting_back_p1">Organizar projetos voluntários e viver o escotismo me ensinou na prática sobre liderança, resiliência e como resolver problemas com poucos recursos.</p>
+                        <p><strong data-i18n="hobbies_scouting_back_p2">Soft skills desenvolvidas: Liderança, Adaptabilidade, Trabalho em Equipe</strong></p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front card-musica">
-                        <h3>Música & Ritmo</h3>
+                        <h3 data-i18n="hobbies_music_front">Música & Ritmo</h3>
                     </div>
                     <div class="card-back">
-                        <p>Entre tocar violão e mixar faixas, aprendi que ritmo e criatividade andam juntos. Música é sobre sentir o momento e se conectar com as pessoas.</p>
-                        <p><strong>Soft skills desenvolvidas: Criatividade, Sensibilidade, Conexão com o Público</strong></p>
+                        <p data-i18n="hobbies_music_back_p1">Entre tocar violão e mixar faixas, aprendi que ritmo e criatividade andam juntos. Música é sobre sentir o momento e se conectar com as pessoas.</p>
+                        <p><strong data-i18n="hobbies_music_back_p2">Soft skills desenvolvidas: Criatividade, Sensibilidade, Conexão com o Público</strong></p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front card-esporte">
-                        <h3>Esportes & Disciplina</h3>
+                        <h3 data-i18n="hobbies_sports_front">Esportes & Disciplina</h3>
                     </div>
                     <div class="card-back">
-                        <p>Futebol pela estratégia e trabalho em equipe, academia pela constância e disciplina. O corpo aprende, mas a mente também cresce junto.</p>
-                            <p><strong>Soft skills desenvolvidas: Disciplina, Persistência, Foco</strong></p>
+                        <p data-i18n="hobbies_sports_back_p1">Futebol pela estratégia e trabalho em equipe, academia pela constância e disciplina. O corpo aprende, mas a mente também cresce junto.</p>
+                            <p><strong data-i18n="hobbies_sports_back_p2">Soft skills desenvolvidas: Disciplina, Persistência, Foco</strong></p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front card-tech">
-                        <h3>Meetups & Comunidade Tech</h3>
+                        <h3 data-i18n="hobbies_tech_front">Meetups & Comunidade Tech</h3>
                     </div>
                     <div class="card-back">
-                        <p>Nada substitui aprender com quem já está no jogo. Participar de meetups me fez entender que networking não é sobre se vender, é sobre construir junto.</p>
-                            <p><strong>Soft skills desenvolvidas: Networking, Aprendizado Contínuo, Colaboração</strong></p>
+                        <p data-i18n="hobbies_tech_back_p1">Nada substitui aprender com quem já está no jogo. Participar de meetups me fez entender que networking não é sobre se vender, é sobre construir junto.</p>
+                            <p><strong data-i18n="hobbies_tech_back_p2">Soft skills desenvolvidas: Networking, Aprendizado Contínuo, Colaboração</strong></p>
                     </div>
                 </div>
             </div>
         </div>
-                
-        
-     </section>
-    <!-- /hobbies section -->
 
+     </section>
     <footer class="contato" id="contato">
         <div class="footer-frases">
-            <p>© 2025 Rafael Munetiko. Todos os direitos reservados.</p>
-            <p>Transformando dados em decisões estratégicas para um futuro mais inteligente.</p>
+            <p data-i18n="footer_copyright">© 2025 Rafael Munetiko. Todos os direitos reservados.</p>
+            <p data-i18n="footer_phrase">Transformando dados em decisões estratégicas para um futuro mais inteligente.</p>
         </div>
         <div class="social-media">
             <a href="https://www.linkedin.com/in/rafaelmunetiko/" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -419,8 +407,6 @@
         </div>
     </footer>
 </body>
-<!-- swiper js script -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- custom script -->
 <script src="js/script.js"></script>
 </html>
