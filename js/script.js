@@ -1,4 +1,5 @@
 let currentLang = localStorage.getItem('language') || 'pt-br';
+let typingTimeoutId; 
 
 /*===== Translations =====*/
 
@@ -300,8 +301,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const speedTyping = 150;
-    const speedDeleting = 75;
+    const speedTyping = 300;
+    const speedDeleting = 150;
     const delayBeforeDelete = 1500;
     let currentTexts = translations[currentLang].typing_professions;
     const typingElement = document.getElementById("typing");
@@ -328,13 +329,13 @@ document.addEventListener('DOMContentLoaded', function() {
             typingElement.textContent = '';
         }
 
-        setTimeout(typeEffect, currentSpeed);
+        typingTimeoutId = setTimeout(typeEffect, currentSpeed);
     }
 
     /*===== / Typing Effect =====*/
 
     function translatePage(lang) {
-        currentLang = lang; 
+        currentLang = lang;
         localStorage.setItem('language', lang);
         elementsToTranslate.forEach(element => {
             const key = element.getAttribute('data-i18n');
@@ -350,30 +351,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-
-    /*===== Download do CV =====*/
-
+    
         if (translations[lang] && translations[lang].cv_link && downloadCvButton) {
             downloadCvButton.href = translations[lang].cv_link;
             downloadCvButton.setAttribute('target', '_blank');
         }
-
+    
         langButtons.forEach(btn => {
             btn.classList.remove('active-lang');
             if (btn.id === lang) {
                 btn.classList.add('active-lang')
             }
         });
-
+    
         localStorage.setItem('language', lang);
-
-    /*===== /Download do CV =====*/
-
+    
+        // Limpa o timeout anterior se existir
+        if (typingTimeoutId) {
+            clearTimeout(typingTimeoutId);
+        }
+    
         textIndex = 0;
         charIndex = 0;
         isDeleting = false;
-        typingElement.textContent = ''; 
-        setTimeout(typeEffect, 100);
+        typingElement.textContent = '';
+        // Inicia o novo efeito de digitação
+        typingTimeoutId = setTimeout(typeEffect, 100);
     }
 
     translatePage(currentLang);
