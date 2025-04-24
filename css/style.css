@@ -986,6 +986,10 @@ footer .social-media a {
         padding: 1.1rem; 
     }
 
+    section {
+        padding: 3rem 3rem 1rem;
+    }
+
     .nav, .nav-responsive {
         display: none; 
     }
