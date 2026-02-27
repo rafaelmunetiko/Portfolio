@@ -14,17 +14,19 @@ const translations = {
         'nav_contato': 'Contato',
         'home_hello': 'Olá, eu sou',
         'home_i_am': 'Rafael Munetiko',
-        'typing_professions': ["Desenvolvedor Front-End", "Desenvolvedor Back-End", "Analista de Dados"],
-        'home_intro': 'Com 9 anos de experiência em RH, estou fazendo a transição para a área de Análise de Dados e Desenvolvimento Front-End e Back-End. Sou movido pelo desafio de construir soluções que conectam dados e código, criando experiências digitais que não só funcionam, mas encantam.',
+        'typing_professions': ["Consultor ServiceNow", "Desenvolvedor Full-Stack", "Analista de Dados"],
+        'home_intro1': 'Sou Consultor Técnico em ServiceNow, especializado em automação de processos e desenvolvimento de soluções escaláveis.',
+        'home_intro2': 'Além disso, atuo como Desenvolvedor Full Stack e Analista de Dados, criando aplicações, integrações e dashboards que conectam tecnologia e negócio de forma eficiente.',
+        'home_intro3': 'Trabalho para entregar soluções simples, performáticas e orientadas a resultados, gerando impacto real em grandes organizações e em projetos sob medida.',
         'home_skills_intro': 'Conhecimentos em ferramentas como:',
         'home_objective': 'Meu objetivo é criar soluções rápidas e eficazes, sempre com foco em inovação e eficiência.',
         'home_download_cv': 'Download CV',
         'cv_link': 'docs/curriculum_pt.pdf',
         'services_title': 'Meus <span>Serviços</span>',
-        'services_frontend_title': 'Front-End',
-        'services_frontend_desc': 'Desenvolvo interfaces web interativas e responsivas utilizando HTML, CSS e JavaScript. Meu foco é criar designs modernos e funcionais, garantindo uma experiência de usuário intuitiva e agradável, independentemente do dispositivo utilizado.',
-        'services_backend_title': 'Back-End',
-        'services_backend_desc': 'Tenho experiência no desenvolvimento de soluções back-end com Python, Java e C#. Trabalho na criação de APIs e integração de sistemas e bancos de dados (SQL e NoSQL), buscando sempre soluções eficientes, seguras e de fácil manutenção.',
+        'services_consultant_title': 'Consultor ServiceNow',
+        'services_consultant_desc': 'Sou consultor ServiceNow com experiência em implementação, customização e automação de processos na plataforma. Crio workflows, scripts e integrações que atendem às necessidades de negócios, garantindo soluções eficientes, seguras e alinhadas às melhores práticas.',
+        'services_developer_title': 'Desenvolvedor Full-Stack',
+        'services_developer_desc': 'Atuo como desenvolvedor full-stack, criando soluções completas que unem interfaces web modernas e funcionais com back-end eficiente e escalável. Trabalho com HTML, CSS, JavaScript, Python, Java e C#, desenvolvendo aplicações responsivas, APIs e integrações com bancos de dados SQL e NoSQL, garantindo sistemas robustos e de fácil manutenção',
         'services_data_title': 'Análise de Dados',
         'services_data_desc': 'Utilizo ferramentas como Power BI, Tableau, SQL e Excel para analisar dados e gerar insights que ajudam as empresas a tomar decisões estratégicas. Meu objetivo é transformar dados em informações claras e práticas, apoiando melhorias nos processos e resultados organizacionais.',
         'read_more': 'Leia Mais',
@@ -86,17 +88,19 @@ const translations = {
         'nav_contato': 'Contact',
         'home_hello': 'Hello, I\'m',
         'home_i_am': 'Rafael Munetiko',
-        'typing_professions': ["Front-End Developer", "Back-End Developer", "Data Analyst"],
-        'home_intro': 'With 9 years of experience in HR, I am transitioning to the area of Data Analysis and Front-End and Back-End Development. I am driven by the challenge of building solutions that connect data and code, creating digital experiences that not only work but also enchant.',
+        'typing_professions': ["ServiceNow Consultant", "Full-Stack Developer", "Data Analyst"],
+        'home_intro1': 'I am a ServiceNow Technical Consultant specializing in process automation and scalable solution development.',
+        'home_intro2': 'In addition, I work as a Full Stack Developer and Data Analyst, building applications, integrations, and dashboards that efficiently connect technology and business.',
+        'home_intro3': 'My goal is to deliver simple, high-performance, results-driven solutions that generate real impact in large organizations and tailored projects.',
         'home_skills_intro': 'Knowledge in tools such as:',
         'home_objective': 'My goal is to create fast and effective solutions, always focused on innovation and efficiency.',
         'home_download_cv': 'Download CV',
         'cv_link': 'docs/curriculum_en.pdf',
         'services_title': 'My <span>Services</span>',
-        'services_frontend_title': 'Front-End',
-        'services_frontend_desc': 'I develop interactive and responsive web interfaces using HTML, CSS, and JavaScript. My focus is on creating modern and functional designs, ensuring an intuitive and enjoyable user experience, regardless of the device used.',
-        'services_backend_title': 'Back-End',
-        'services_backend_desc': 'I have experience in developing back-end solutions with Python, Java, and C#. I work on creating APIs and integrating systems and databases (SQL and NoSQL), always seeking efficient, secure, and easy-to-maintain solutions.',
+        'services_consultant_title': 'ServiceNow Consultant',
+        'services_consultant_desc': 'I am a ServiceNow consultant with experience in implementing, customizing, and automating processes on the platform. I create workflows, scripts, and integrations that meet business needs, delivering efficient, secure, and best-practice-aligned solutions.',
+        'services_developer_title': 'Full-Stack Developer',
+        'services_developer_desc': 'I work as a full-stack developer, delivering complete solutions that combine modern, functional web interfaces with efficient and scalable back-end systems. I work with HTML, CSS, JavaScript, Python, Java, and C#, developing responsive applications, APIs, and database integrations (SQL and NoSQL), ensuring robust and maintainable systems.',
         'services_data_title': 'Data Analysis',
         'services_data_desc': 'I use tools like Power BI, Tableau, SQL, and Excel to analyze data and generate insights that help companies make strategic decisions. My goal is to transform data into clear and practical information, supporting improvements in organizational processes and results.',
         'read_more': 'Read More',
@@ -302,39 +306,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /*===== Typing Effect =====*/
 
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const speedTyping = 300;
-    const speedDeleting = 150;
-    const delayBeforeDelete = 1500;
-    let currentTexts = translations[currentLang].typing_professions;
-    const typingElement = document.getElementById("typing");
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const speedTyping = 300;
+const speedDeleting = 150;
+const delayBeforeDelete = 1500;
+let currentTexts = translations[currentLang].typing_professions;
+const typingElement = document.getElementById("typing");
 
-    function typeEffect() {
-        const currentText = currentTexts[textIndex];
-        const currentSpeed = isDeleting ? speedDeleting : speedTyping;
+function typeEffect() {
+    const currentText = currentTexts[textIndex];
+    const currentSpeed = isDeleting ? speedDeleting : speedTyping;
 
-        if (isDeleting) {
-            charIndex--;
-        } else {
-            charIndex++;
-        }
-
+    if (isDeleting) {
+        charIndex--;
         typingElement.textContent = currentText.substring(0, charIndex);
 
-        if (!isDeleting && charIndex === currentText.length) {
-            setTimeout(() => {
-                isDeleting = true;
-            }, delayBeforeDelete);
-        } else if (isDeleting && charIndex === 0) {
+        if (charIndex === 0) {
+            // apagou tudo → vai para próximo texto
             isDeleting = false;
             textIndex = (textIndex + 1) % currentTexts.length;
-            typingElement.textContent = '';
         }
+    } else {
+        charIndex++;
+        typingElement.textContent = currentText.substring(0, charIndex);
 
-        typingTimeoutId = setTimeout(typeEffect, currentSpeed);
+        if (charIndex === currentText.length) {
+            setTimeout(() => {
+                isDeleting = true;
+                typeEffect(); 
+            }, delayBeforeDelete);
+            return; 
+        }
     }
+
+    setTimeout(typeEffect, currentSpeed);
+}
+
 
     /*===== / Typing Effect =====*/
 
